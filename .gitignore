@@ -1,2 +1,12 @@
 vendor
+writable
 .env
+
+# Logs
+/app/Logs/*.log
+
+# Cache
+/app/Cache/
+
+.DS_Store
+Thumbs.db
