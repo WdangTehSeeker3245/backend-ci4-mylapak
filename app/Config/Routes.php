@@ -39,7 +39,7 @@ $routes->get('api/lapak/search', 'LapakController::search');
 // $routes->put('api/lapak/(:num)', 'LapakController::update/$1');
 // $routes->delete('api/lapak/(:num)', 'LapakController::delete/$1');
 
-$routes->post('api/register', 'AuthController::register');
+// $routes->post('api/register', 'AuthController::register');
 $routes->post('api/login', 'AuthController::login');
 
 $routes->group('/',['filter' => 'auth'], function ($routes) {
