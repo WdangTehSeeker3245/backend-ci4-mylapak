@@ -26,7 +26,7 @@ class AuthFilter implements FilterInterface
      * @return mixed
      */
     public function before(RequestInterface $request, $arguments = null)
-    {
+    {   
         $key = getenv('JWT_PRIVATE_KEY');
 
         $header = $request->getServer("HTTP_AUTHORIZATION");

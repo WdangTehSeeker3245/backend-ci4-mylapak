@@ -1,4 +1,12 @@
 <?php
+header("Access-Control-Allow-Origin: *");
+header('Access-Control-Allow-Headers: *');
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PATCH, PUT, DELETE");
+
+$method = $_SERVER['REQUEST_METHOD'];
+if($method == "OPTIONS"){
+    die();
+}
 
 // Check PHP version.
 $minPhpVersion = '7.4'; // If you update this, don't forget to update `spark`.

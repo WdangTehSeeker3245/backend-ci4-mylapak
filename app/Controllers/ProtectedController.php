@@ -7,6 +7,7 @@ use CodeIgniter\RESTful\ResourceController;
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 use App\Models\UserModel;
+use CodeIgniter\Response;
 
 class ProtectedController extends ResourceController
 {
@@ -20,6 +21,7 @@ class ProtectedController extends ResourceController
 
     public function index()
     {
+        
         $header = $this->request->getServer('HTTP_AUTHORIZATION');
         $headerParts = explode(' ',$header);
         $accessToken = $headerParts[1];

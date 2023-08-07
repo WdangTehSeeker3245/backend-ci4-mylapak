@@ -74,7 +74,7 @@ class AuthController extends ResourceController
 
 
     public function login()
-    {
+    {   
         // Retrieve JSON data from the request body
         $data = $this->request->getJSON(true);
 
@@ -155,7 +155,10 @@ class AuthController extends ResourceController
             'user_id' => $userId,
             'exp' => time() + 900 // 15 minutes expiration time
         ];
-
+        // $payload = [
+        //     'user_id' => $userId,
+        //     'exp' => time() + 60 // 1 minutes expiration time
+        // ];
         return JWT::encode($payload, $this->privateKey,'HS256');
     }
 
@@ -170,7 +173,7 @@ class AuthController extends ResourceController
     }
 
     public function logout()
-    {
+    {   
         $header = $this->request->getServer('HTTP_AUTHORIZATION');
         $headerParts = explode(' ',$header);
         $accessToken = $headerParts[1];

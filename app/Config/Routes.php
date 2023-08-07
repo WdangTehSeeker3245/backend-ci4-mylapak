@@ -41,9 +41,9 @@ $routes->get('api/lapak/search', 'LapakController::search');
 
 // $routes->post('api/register', 'AuthController::register');
 $routes->post('api/login', 'AuthController::login');
+$routes->post('api/refresh-token', 'AuthController::refreshToken');;
 
 $routes->group('/',['filter' => 'auth'], function ($routes) {
-    $routes->post('api/refresh-token', 'AuthController::refreshToken');
     $routes->get('api/logout', 'AuthController::logout');
 
     $routes->get('api/protected', 'ProtectedController::index');
